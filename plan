@@ -1,0 +1,154 @@
+# Intern Project Assignment: Product Page (MERN Stack)
+
+---
+
+| **Timeline** | **Deadline: 15th May 2026 at 12:00 AM.** |
+| --- | --- |
+| **Deliverables** | 1. **GitHub Public Repository Links**
+- Frontend (FE UI) Repository
+- Backend (BE Source Code) Repository
+2. **Source Code (.zip File)** *(Optional)*
+3. **Screenshots of the Frontend UI / Landing Page**
+4. **Screenshots of the MongoDB Database**
+- Showing stored/saved data
+5. **Hosted Application URL(s)** *(Optional)*   |
+|  Submission Link | <We will update the Google Form link here> |
+| **Note** | Use of AI tools is permitted for this project. |
+
+**Welcome to your upcoming project!**
+Your task is to build a modern, fully responsive, and animated landing page for a premier IT Services Org. You will be using the **MERN Stack** (MongoDB, Express, React, Node.js) to build both a stunning User Interface and a functional backend to capture client inquiries.
+
+---
+
+## 🎯 Project Objectives
+
+1. **Frontend:** Build a modern UI with smooth animations, reusable components, and a clean layout.
+2. **Backend:** Create RESTful APIs to handle and store contact form submissions.
+3. **Best Practices:** Maintain clean code, proper folder structure, and responsive design principles.
+
+NOTE : Use of AI or any AI related tools are allowed
+
+---
+
+## 🛠️ Technology Stack Recommendations
+
+- **Frontend:** React.js, Tailwind CSS (for modern UI styling), Framer Motion (for hero & scroll animations).
+- **Backend:** Node.js, Express.js.
+- **Database:** MongoDB (using Mongoose ORM).
+- **State Management:** React Hooks (`useState`, `useEffect`).
+
+---
+
+## 🖥️ Frontend Requirements (UI Features)
+
+Your landing page should be visually appealing, modern, and responsive. Please implement the following sections:
+
+### 1. Navbar (Floating/Deck Style)
+
+- Create a "Navbar Deck" (a floating, glass-morphism style navigation bar centered at the top).
+- Links should smoothly scroll to their respective sections: *Home, Services, Tech Stack, Contact*.
+
+### 2. Hero Section
+
+- A catchy headline (e.g., *"Transforming Ideas into Digital Reality"*).
+- A brief sub-headline.
+- **Animation Requirement:** Elements should fade in or slide up smoothly when the page loads (hint: use Framer Motion).
+- Include a prominent "Get in Touch" Call-to-Action (CTA) button that scrolls to the Contact section.
+
+### 3. Services Section
+
+- Display your services using modern cards with hover effects.
+- Include at least: **Web Development**, **Mobile App Development**, and **Desktop Applications**.
+
+### 4. Technology Stack Section (Tabbed Interface)
+
+- Build a dynamic tabbed interface where clicking a tab reveals the respective technologies. Feel free to use icons for a polished look.
+- **Tabs Required:**
+    - **Frontend (FE):** React, Angular, Vue, Next.js, Tailwind CSS, HTML5/CSS3.
+    - **Backend (BE):** Node.js, Express, Python/Django, Java Spring Boot, Go.
+    - **Database (DB):** MongoDB, PostgreSQL, MySQL, Redis.
+    - **Deployment/DevOps:** Docker, AWS, Vercel, Heroku, GitHub Actions.
+
+### 5. Contact Section
+
+- A clean module for clients to reach out.
+- **Form Fields:** `fullName`, `email`, `description`.
+- Provide real-time UI feedback (e.g., "Sending..." on submit, and a success message once the backend responds).
+
+### 6. Footer
+
+- Simple footer with a copyright notice, social media placeholder links, and logo.
+
+---
+
+## ⚙️ Backend Requirements (API & Database)
+
+Set up an Express server connected to MongoDB.
+
+### 1. Database Model
+
+Create a Mongoose schema (`Contact`) with the following fields:
+
+- `fullName` (String, required)
+- `email` (String, required)
+- `description` (String, required)
+- `createdAt` (Date, default to `Date.now`)
+
+### 2. API Routes
+
+You must build the following REST endpoints:
+
+- **`POST /api/contact`**
+    - **Purpose:** Receives data from the React frontend and saves it to the database.
+    - **Validation:** Ensure all fields are provided before saving.
+- **`GET /api/contact/getContactInfo`**
+    - **Purpose:** Fetches all the stored contact queries from the database.
+    - **Output:** Return a JSON array of all contacts sorted by newest first. *(Note: Normally this would be protected by an admin login, but keep it open for this task).*
+
+---
+
+## 📂 Suggested Folder Structure
+
+```
+project-root/
+│
+├── backend/                  # Express server
+│   ├── models/               # Mongoose schemas (Contact.js)
+│   ├── routes/               # API routes (contactRoutes.js)
+│   ├── controllers/          # Route logic
+│   ├── server.js             # Entry point, Express setup, DB connection
+│   └── .env                  # Environment variables (DB_URI, PORT)
+│
+└── frontend/                 # React App (Create React App or Vite)
+    ├── src/
+    │   ├── components/       # Navbar, Hero, Services, TechTabs, ContactForm, Footer
+    │   ├── App.js            # Main page assembly
+    │   ├── index.js          # React DOM render
+    │   └── styles/           # Tailwind / CSS files
+    └── package.json
+```
+
+---
+
+## 🌟 Bonus / Stretch Goals (Optional but highly recommended)
+
+Want to stand out? Try implementing these extra features:
+
+1. **Form Validation:** Add strict email validation on the frontend before allowing submission.
+2. **Dark/Light Mode:** Add a toggle in the navbar to switch the theme.
+3. **Toasts:** Use a library like `react-hot-toast` or `react-toastify` for sleek success/error popups when the form is submitted.
+4. **Admin Dashboard Route:** Create a simple separate React route (e.g., `/admin`) that fetches from `/getContactInfo` and displays the inquiries in a neat HTML table.
+    1. Login is not required for admin dashboard.
+
+---
+
+## 📝 Evaluation Criteria
+
+You will be evaluated on:
+
+- **Code Quality & Organization:** Are components reusable? Is the folder structure clean?
+- **UI/UX Aesthetics:** Does it look like a modern, professional agency site?
+- **Responsiveness:** Does the site look good on mobile, tablet, and desktop?
+- **Full-Stack Integration:** Does the frontend successfully communicate with the backend? Are errors handled gracefully?
+
+**Good luck, and have fun building! We look forward to seeing your creativity shine.**
