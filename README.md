@@ -60,3 +60,26 @@ Open `http://localhost:5173/admin` to view submissions.
 
 - Provide MongoDB Atlas credentials in `backend/.env`.
 - Screenshots and hosted URLs can be added for submission.
+
+## Deployment (Render + Vercel)
+
+### Backend on Render
+
+1) Create a new Web Service from this GitHub repo.
+2) Root directory: `backend`
+3) Build command: `npm install`
+4) Start command: `npm start`
+5) Environment variables:
+	- `MONGO_URI` = your MongoDB Atlas connection string
+	- `CORS_ORIGIN` = your Vercel URL (example: `https://your-app.vercel.app`)
+
+Render provides `PORT` automatically.
+
+### Frontend on Vercel
+
+1) Import the same GitHub repo into Vercel.
+2) Root directory: `frontend`
+3) Build command: `npm run build`
+4) Output directory: `dist`
+5) Environment variables:
+	- `VITE_API_URL` = your Render backend URL (example: `https://your-backend.onrender.com`)
