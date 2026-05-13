@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const tabs = [
   {
@@ -41,14 +42,26 @@ const TechTabs = () => {
 
   return (
     <section id="tech" className="section tech">
-      <div className="section-header">
+      <motion.div
+        className="section-header"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <p className="eyebrow">Technology stack</p>
         <h2>Modern tools, proven frameworks</h2>
         <p className="section-sub">
           Select a focus area to explore the technologies we deliver with.
         </p>
-      </div>
-      <div className="tabs">
+      </motion.div>
+      <motion.div
+        className="tabs"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="tab-list">
           {tabs.map((tab) => (
             <button
@@ -70,7 +83,7 @@ const TechTabs = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import getApiBase from "../utils/api";
 
@@ -67,14 +68,26 @@ const Contact = () => {
 
   return (
     <section id="contact" className="section contact">
-      <div className="section-header">
+      <motion.div
+        className="section-header"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <p className="eyebrow">Contact</p>
         <h2>Tell us about your next project</h2>
         <p className="section-sub">
           Share your requirements and we will schedule a discovery call.
         </p>
-      </div>
-      <div className="contact-grid">
+      </motion.div>
+      <motion.div
+        className="contact-grid"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="contact-card">
           <h3>Let us build your roadmap</h3>
           <p>
@@ -132,7 +145,7 @@ const Contact = () => {
           </button>
           {status && <p className="form-success">{status}</p>}
         </form>
-      </div>
+      </motion.div>
     </section>
   );
 };

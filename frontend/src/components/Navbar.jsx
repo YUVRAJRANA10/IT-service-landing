@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
@@ -25,11 +23,6 @@ const Navbar = ({ theme, onToggleTheme }) => {
       </nav>
     </header>
   );
-};
-
-Navbar.propTypes = {
-  theme: PropTypes.oneOf(["light", "dark"]).isRequired,
-  onToggleTheme: PropTypes.func.isRequired,
 };
 
 export default Navbar;
